@@ -42,3 +42,9 @@ function [f,b,a] =  notchFilter(r,theta,M,s)
     
 
 end
+
+function mse =  mseMaker(y,M)
+    for i = 1:M  
+        mse(i) = mean(y{i}.^2);    
+    end
+end
