@@ -79,3 +79,39 @@ function msePlotter(mse, mse1, mseAverage,globalMinX,globalMinY, freq)
     
 
 end
+
+
+function theta =  lmsCal(M,mu,theta,s,r,N1)
+    
+    for i = 3:N1
+        
+        f = notchFilter(r,theta(1,i),M,s);
+        
+        for k = 1:M
+            y{k+1} = f{k};
+        end
+        
+        y{1} = s;
+        beta{1} = zeros(1,1000);  
+        
+        for m = 1:M
+                         
+          beta{m+1}(1,1) = 0;
+          beta{m+1}(1,2) = 0;  
+          
+        
+          for n = 3:N1
+
+            beta{m+1}(1,n) = beta{m}(1,n) - 2*cos((m)*theta(1,n))*beta{m}(1,n-1)  ...
+            + 2*(m)*sin((m)*theta(1,n))*y{m}(1,n-1) + beta{m}(1,n-2) ...
+             + 2*r*cos((m)*theta(1,n))*beta{m+1}(1,n-1) -r^2*beta{m+1}(1,n-2) ...
+            - 2*r*(m)*sin((m)*theta(1,n))*y{m+1}(1,n-1);
+            
+        
+          end   
+           
+        end
+              
+        theta(1,i+1) = theta(1,i)-2*mu*y{M}(1,i)*beta{M}(1,i);
+
+    end
