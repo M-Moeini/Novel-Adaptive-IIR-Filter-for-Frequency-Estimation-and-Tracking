@@ -135,3 +135,21 @@ globalMinY = ymin;
 if (mse_flag_plot)
     msePlotter(mse,mse1,mseAvg,globalMinX,globalMinY, freq*Fs/2); 
 end
+
+end
+
+
+function range =  freqCaptureCal(mse,mseAvg)
+    dis = 5
+    val = find(round(mean(mse*50)) == round(mse*50))';
+    i = length(val);
+    while(i>1)
+         if val(i) - val(i-1) > dis
+            x(1) = val(i-1);
+            x(2) = val(i);
+            break
+         end
+        i=i-1;
+    end
+    range = x
+end
