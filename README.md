@@ -37,9 +37,15 @@ The code is structured into several sections:
 
 The code generates visualizations and figures showcasing:
 
-- Input signals and filtered output.
-- Frequency response plots of the filter.
-- Desired frequency tracking results for different convergence rates.
+![MSE-Plot][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/MSE-Plot.png)]
+
+
+
+![Notch-Output][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)]
+
+
+
+![Notch-Output][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)]
 
 ## Acknowledgments
 
@@ -49,3 +55,6 @@ This implementation heavily relies on the concepts from the paper '**Novel Adapt
 
 Contributions and improvements to the implementation or documentation are welcome! Feel free to fork this repository, make changes, and submit a pull request.
 
+## License
+
+This project is licensed under [MIT License](link-to-license).
