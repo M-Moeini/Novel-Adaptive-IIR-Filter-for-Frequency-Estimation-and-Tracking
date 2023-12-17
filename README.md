@@ -50,9 +50,5 @@ The code generates visualizations and figures showcasing:
 
 ## V. Acknowledgments
 
-This implementation heavily relies on the concepts from the paper '**Novel Adaptive IIR Filter for Frequency Estimation and Tracking**' authored by **Li Tan** and **Jean Jiang**.
-
-## VI. Contributing
-
-Contributions and improvements to the implementation or documentation are welcome! Feel free to fork this repository, make changes, and submit a pull request.
+This implementation heavily relies on the concepts from the paper '[**Novel Adaptive IIR Filter for Frequency Estimation and Tracking**](https://ieeexplore.ieee.org/abstract/document/5230818?casa_token=DxMDCnTBnXsAAAAA:7CzY9qnxx0hZpN2GDohJ8RIwSNdo1HdZTcJAVAbHwrXt3lDEC-vWlLXdHvxsNy85QNDFJ1wv5nT3)' authored by **Li Tan** and **Jean Jiang**.
 
