@@ -61,3 +61,21 @@ function [MSE, MSE1, MSEaverage, freq] =  mseCalculator(r,M,s,iteration)
     MSEaverage = mean(MSE)*ones(length(theta));
     
 end
+
+function msePlotter(mse, mse1, mseAverage,globalMinX,globalMinY, freq)
+    fCaptureIndex = freqCaptureCal(mse,mseAverage);
+    figure;
+    plot(freq, mse, 'k');
+    hold on;
+    plot(freq, mse1, '--');
+    plot(freq, mseAverage, 'r--');
+    plot(freq(1, fCaptureIndex(1)), mse(fCaptureIndex(1)), 'ro');
+    plot(freq(1, fCaptureIndex(2)), mse(fCaptureIndex(2)), 'ro');
+    plot(globalMinX, globalMinY, 'ro')
+    xlabel('Frequency (Hz)');
+    ylabel('MSE');
+    legend(["MSE" "MSE1" "Average MSE"], "location", "south")
+    
+    
+
+end
