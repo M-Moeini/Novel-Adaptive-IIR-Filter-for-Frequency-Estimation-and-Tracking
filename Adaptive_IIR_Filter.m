@@ -115,3 +115,23 @@ function theta =  lmsCal(M,mu,theta,s,r,N1)
         theta(1,i+1) = theta(1,i)-2*mu*y{M}(1,i)*beta{M}(1,i);
 
     end
+    
+    
+end
+
+function thetaOpt = thetaOptimumCal(r,M,s,iteration,mse_flag_plot,Fs)
+
+[mse,mse1, mseAvg, freq] = mseCalculator(r,M,s,iteration);
+disp(size(mse))
+
+[ymins, xmins] = findpeaks(-mse,freq);
+ymin = ymins*-1;
+[ymin,index] = min(ymin);
+xmin = xmins(index);
+thetaOpt = xmin*pi;
+globalMinX = (xmin*Fs/2);
+globalMinY = ymin;
+
+if (mse_flag_plot)
+    msePlotter(mse,mse1,mseAvg,globalMinX,globalMinY, freq*Fs/2); 
+end
