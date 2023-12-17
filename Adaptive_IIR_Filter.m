@@ -26,7 +26,27 @@ iteration = 1000;
 theta_optimum_r1 = thetaOptimumCal(r1,M,s,iteration,1,Fs);
 theta_optimum_r2 = thetaOptimumCal(r2,M,s,iteration,0,Fs);
 
+%% stage2
+theta_r1 = zeros(1,N1);
+theta_r1(1,3) = theta_optimum_r1;
+outputTheta_r1 = lmsCal(M,mu,theta_r1,s,r1,N1);
+outputFreq_r1 = outputTheta_r1*Fs/2/pi;
 
+theta_r2 = zeros(1,N1);
+theta_r2(1,3) = theta_optimum_r2;
+outputTheta_r2 = lmsCal(M,mu,theta_r2,s,r2,N1);
+outputFreq_r2 = outputTheta_r2*Fs/2/pi; 
+
+for i = 1:N1
+    
+    z = notchFilter(r1,outputTheta_r1(1,i),M,s);
+    y1(1,i) = z{1}(1,i);
+    y2(1,i) = z{2}(1,i);
+    y3(1,i) = z{3}(1,i);
+      
+end
+[y, b, a] = notchFilter(r1,f1*2*pi/Fs,M,s);
+[H,w] = freqz(b, a, linspace(0, pi, 100000));
 
 %% functions
 function [f,b,a] =  notchFilter(r,theta,M,s)
