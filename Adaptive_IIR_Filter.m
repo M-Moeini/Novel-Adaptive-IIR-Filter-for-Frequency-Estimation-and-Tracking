@@ -48,3 +48,16 @@ function mse =  mseMaker(y,M)
         mse(i) = mean(y{i}.^2);    
     end
 end
+
+function [MSE, MSE1, MSEaverage, freq] =  mseCalculator(r,M,s,iteration)
+    theta = linspace(0,pi/M,iteration);
+    freq = theta/pi;
+    for i = 1:length(theta)
+        y = notchFilter(r,theta(1,i),M,s);
+        x = mseMaker(y,M);
+        MSE(i) = x(M);
+        MSE1(i) = x(1);
+    end
+    MSEaverage = mean(MSE)*ones(length(theta));
+    
+end
