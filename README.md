@@ -1,6 +1,7 @@
 # Adaptive Harmonic IIR Notch Filter for Frequency Estimation and Tracking
 
-This project implements an adaptive harmonic Infinite Impulse Response (IIR) notch filter for accurate frequency estimation and tracking within a harmonic frequency environment. The code replicates concepts from the paper '**Novel Adaptive IIR Filter for Frequency Estimation and Tracking**' by **Li Tan** and **Jean Jiang**.
+This project implements an adaptive harmonic Infinite Impulse Response (IIR) notch filter for accurate frequency estimation and tracking within a harmonic frequency environment. The code replicates concepts from the paper '[**Novel Adaptive IIR Filter for Frequency Estimation and Tracking**](https://ieeexplore.ieee.org/abstract/document/5230818?casa_token=DxMDCnTBnXsAAAAA:7CzY9qnxx0hZpN2GDohJ8RIwSNdo1HdZTcJAVAbHwrXt3lDEC-vWlLXdHvxsNy85QNDFJ1wv5nT3)' by **Li Tan** and **Jean Jiang**.
+
 
 ## Summary
 
@@ -55,6 +56,3 @@ This implementation heavily relies on the concepts from the paper '**Novel Adapt
 
 Contributions and improvements to the implementation or documentation are welcome! Feel free to fork this repository, make changes, and submit a pull request.
 
-## License
-
-This project is licensed under [MIT License](link-to-license).
