@@ -48,6 +48,56 @@ end
 [y, b, a] = notchFilter(r1,f1*2*pi/Fs,M,s);
 [H,w] = freqz(b, a, linspace(0, pi, 100000));
 
+%% figures
+figure;
+    subplot(4, 1, 1);
+        plot(1:1000, s);
+        xlabel("n")
+        ylabel("|H(f )|(dB)")
+    subplot(4, 1, 2);
+        plot(1:1000, y1);
+        xlabel("n")
+        ylabel("y1(n)")
+    subplot(4, 1, 3);
+        plot(1:1000, y2);
+        xlabel("n")
+        ylabel("y2(n)")
+    subplot(4,1,4);
+        plot(1:1000, y3);
+        xlabel("n (Iterations)")
+        ylabel("y3(n)")
+        
+figure;     
+    subplot(3,1,1)
+        plot(w*Fs/2/pi, real(20*log(H)))
+        grid on;
+        ylabel("|H(f )|(dB)")
+        xlabel("Frequnecy (Hz)")
+    subplot(3,1,2)
+        plot(1:length(outputFreq_r1), outputFreq_r1)
+        grid on;
+        xlabel("n (Iterations)")
+        ylabel("Desired f(n) (Hz)")
+        ylim([f1-300 f1+300])
+        xlim([0 length(outputFreq_r1)]);
+        text(805, f1-100, "r=0.95")         
+    subplot(3,1,3)
+        plot(1:length(outputFreq_r2), outputFreq_r2)
+        grid on;
+        xlabel("n (Iterations)")
+        ylabel("Desired f(n) (Hz)")
+        ylim([f1-300 f1+300])
+        xlim([0 length(outputFreq_r2)]);
+        text(805, f1-100, "r=0.85")
+% FFT For my understandng ( was not part of the paper)
+figure;
+        ft = fft(s);
+        mag = abs(ft);
+        fr = (0:length(ft)-1)*Fs/length(ft);
+        plot(fr,mag);
+        xlabel('Frequency (Hz)');
+        ylabel('FFT of original signal');
+        title('Original signal spectrum');
 %% functions
 function [f,b,a] =  notchFilter(r,theta,M,s)
     bIIR = [1 -2*cos(1*theta) 1];
