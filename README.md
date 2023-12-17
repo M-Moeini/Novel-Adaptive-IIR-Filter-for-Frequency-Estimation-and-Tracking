@@ -1,33 +1,51 @@
-﻿# Novel Adaptive IIR Filter for Frequency Estimation and Tracking
+# Adaptive Harmonic IIR Notch Filter for Frequency Estimation and Tracking
 
- Project Description
-===================
+This project implements an adaptive harmonic Infinite Impulse Response (IIR) notch filter for accurate frequency estimation and tracking within a harmonic frequency environment. The code replicates concepts from the paper 'Novel Adaptive IIR Filter for Frequency Estimation and Tracking' by Li Tan and Jean Jiang.
 
-This project is centered around the implementation of an adaptive
-harmonic Infinite Impulse Response (IIR) notch filter for frequency
-estimation and tracking in a harmonic frequency environment. The filter
-is designed to efficiently perform frequency estimation and tracking,
-providing a robust solution for signal processing tasks.
+## Summary
 
-The core concept of this project is based on the paper 'Novel Adaptive
-IIR Filter for Frequency Estimation and Tracking' authored by Li Tan and
-Jean Jiang. The paper presents a novel approach to adaptive filtering,
-introducing a single adaptive coefficient to the IIR notch filter. This
-innovative approach allows for efficient frequency estimation and
-tracking, making it a valuable tool in the field of signal processing.
+The primary goal of this project is to create an efficient and adaptable filter that accurately estimates and tracks frequencies in complex harmonic environments. The implemented filter, based on the concepts presented in the paper, provides robust signal processing capabilities.
 
-The project aims to replicate and build upon the concepts presented in
-the paper, providing a practical implementation of the adaptive harmonic
-IIR notch filter. The goal is to create a user-friendly tool that can be
-easily integrated into various signal processing tasks, offering a
-reliable solution for frequency estimation and tracking.
+## Implementation Details
 
-The project also includes a simple scheme to select the initial filter
-coefficient. This scheme ensures the algorithm's convergence to its
-global minimum error, enhancing the overall performance and reliability
-of the filter.
+### MATLAB Implementation
 
-In summary, this project offers a practical implementation of a novel
-adaptive harmonic IIR notch filter, providing a robust and efficient
-solution for frequency estimation and tracking in a harmonic frequency
-environment.
+The MATLAB code provided offers a practical implementation of the adaptive harmonic IIR notch filter. It includes:
+
+- Initialization with defined parameters such as sampling frequency, number of iterations, filter coefficients, and signal frequencies.
+- Two stages: 
+  1. Calculation of optimized filter coefficients.
+  2. Application of the adaptive filter to the input signal for frequency estimation and tracking.
+
+### How to Use
+
+To run the MATLAB implementation:
+
+1. Ensure MATLAB is installed on your system.
+2. Copy the provided MATLAB code into a new or existing MATLAB script.
+3. Run the script within the MATLAB environment.
+
+## Code Structure
+
+The code is structured into several sections:
+
+- **Initialization:** Setting up necessary parameters and defining input signals.
+- **Stages:** Divided into two stages for optimal filter coefficient calculation and application of the adaptive filter.
+- **Functions:** Includes functions like `notchFilter`, `mseMaker`, `lmsCal`, and more, essential for filter operations.
+
+## Results
+
+The code generates visualizations and figures showcasing:
+
+- Input signals and filtered output.
+- Frequency response plots of the filter.
+- Desired frequency tracking results for different convergence rates.
+
+## Acknowledgments
+
+This implementation heavily relies on the concepts from the paper 'Novel Adaptive IIR Filter for Frequency Estimation and Tracking' authored by Li Tan and Jean Jiang.
+
+## Contributing
+
+Contributions and improvements to the implementation or documentation are welcome! Feel free to fork this repository, make changes, and submit a pull request.
+
