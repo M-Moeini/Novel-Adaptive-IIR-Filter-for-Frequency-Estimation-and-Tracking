@@ -37,15 +37,15 @@ The code is structured into several sections:
 
 The code generates visualizations and figures showcasing:
 
-![MSE-Plot][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/MSE-Plot.png)]
+![MSE-Plot](https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/MSE-Plot.png)
 
 
 
-![Notch-Output][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)]
+![Notch-Output](https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)
 
 
 
-![Notch-Output][(https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)]
+![Notch-Output](https://github.com/M-Moeini/Novel-Adaptive-IIR-Filter-for-Frequency-Estimation-and-Tracking/blob/master/Results/Notch-Output.png)
 
 ## Acknowledgments
 
