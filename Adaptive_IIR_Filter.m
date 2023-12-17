@@ -21,6 +21,13 @@ mu = 0.0001;
 M = 3;
 iteration = 1000;
 
+%% stage1
+ 
+theta_optimum_r1 = thetaOptimumCal(r1,M,s,iteration,1,Fs);
+theta_optimum_r2 = thetaOptimumCal(r2,M,s,iteration,0,Fs);
+
+
+
 %% functions
 function [f,b,a] =  notchFilter(r,theta,M,s)
     bIIR = [1 -2*cos(1*theta) 1];
