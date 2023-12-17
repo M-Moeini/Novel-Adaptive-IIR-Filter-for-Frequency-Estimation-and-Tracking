@@ -20,3 +20,25 @@ r2 = 0.85;
 mu = 0.0001;
 M = 3;
 iteration = 1000;
+
+%% functions
+function [f,b,a] =  notchFilter(r,theta,M,s)
+    bIIR = [1 -2*cos(1*theta) 1];
+    aIIR = [1 -2*r*cos(1*theta) r^2];
+    f{1}  = filter(bIIR,aIIR,s);
+    b = bIIR;
+    a = aIIR;
+
+
+    for m = 2:M
+        bIIR = [1 -2*cos(m*theta) 1];
+        aIIR = [1 -2*r*cos(m*theta) r^2];
+        f{m} = filter(bIIR,aIIR,f{m-1});
+        b = conv(b,bIIR);
+        a = conv(a,aIIR);
+        
+    
+    end 
+    
+
+end
